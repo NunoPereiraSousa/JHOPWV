@@ -1,0 +1,16 @@
+@keyframes show-up {
+  from {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    width: 0;
+  }
+
+  50% {
+    width: $xLargeSize;
+  }
+}

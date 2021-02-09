@@ -1,0 +1,537 @@
+.landing {
+  padding-top: 11vh;
+  height: 100vh;
+  background-image: url("../Assets/landing__image.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  .overlay {
+    // margin-top: 11vh;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__content {
+    position: relative;
+    padding: 15vw 10vw;
+
+    h1 {
+      font-size: calc(3rem + 1vw);
+      font-family: "playfair display";
+      letter-spacing: 2px;
+      font-weight: 400;
+      color: $white;
+    }
+
+    p {
+      margin: 1.75rem 0;
+      font-size: 1.25rem;
+      font-style: italic;
+      font-family: "Raleway";
+      color: $white;
+    }
+
+    button {
+      margin: 0.75rem 0 0 0;
+      padding: 1rem;
+      border: 0.5px solid $white;
+      border-radius: 2px;
+      background-color: transparent;
+      color: $white;
+      font-weight: 500;
+      font-family: "Raleway";
+      font-size: 1.075rem;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    right: 5%;
+    bottom: 15%;
+
+    p {
+      color: $white;
+      transform: rotate(90deg);
+      position: relative;
+      font-size: $regularSize;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 125%;
+        height: 2px;
+        background-color: $white;
+
+        animation: grow 3.6s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+.second {
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__info {
+    padding: 4rem;
+
+    h1,
+    h5,
+    p {
+      text-align: center;
+    }
+
+    h1 {
+      font-family: "playfair display";
+    }
+
+    h5 {
+      margin: 2rem 0;
+      font-size: 1rem;
+      font-style: italic;
+      font-family: "playfair display";
+    }
+
+    p {
+      font-family: "Raleway";
+      line-height: 1.425;
+    }
+  }
+}
+
+.third {
+  padding: 2rem 0 4rem;
+  background-color: $black;
+
+  &__info {
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1,
+    h5 {
+      text-align: center;
+      color: $white;
+      font-family: "playfair display";
+    }
+
+    h5 {
+      margin: 2rem 0 0;
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.6;
+    }
+  }
+
+  &__grid {
+    padding: 0 2rem;
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 2rem;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image__card {
+      background-image: url("../Assets/landing__image.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      min-height: 20rem;
+
+      .legend {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.65);
+        padding: 1.5rem 2.5rem;
+
+        h3 {
+          color: $white;
+          font-size: $smallSize;
+        }
+
+        a {
+          font-size: $xSmallSize;
+          color: $darkYellow;
+        }
+      }
+    }
+  }
+}
+
+.fourth {
+}
+
+.fifth {
+  margin: 6rem 0 4rem;
+  h1 {
+    margin-bottom: 4rem;
+    text-align: center;
+    color: $black;
+    font-family: "playfair display";
+  }
+
+  .grid {
+    padding: 0 2rem;
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 3rem;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  img {
+    min-height: 20rem;
+  }
+
+  a {
+    width: fit-content;
+    margin: 1rem;
+    padding-left: 2rem;
+    color: $black;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.5s ease;
+
+    &:hover {
+      padding-left: 3.2rem;
+
+      &::before {
+        width: 40px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -0%;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $black;
+      width: 20px;
+      height: 2px;
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+.sixth {
+  &__info {
+    padding: 4rem;
+
+    h3 {
+      font-family: "playfair display";
+      text-align: center;
+      color: $black;
+    }
+
+    p {
+      font-family: "Raleway";
+      margin-top: 2rem;
+      text-align: center;
+      font-weight: 500;
+      font-style: italic;
+      font-size: calc(1rem + 0.2vw);
+    }
+  }
+}
+
+.seventh {
+  margin-bottom: 4rem;
+  &__info {
+    padding: 0 2rem;
+    h1 {
+      margin-bottom: 4rem;
+      font-weight: 500;
+      text-align: center;
+      color: $black;
+      font-family: "playfair display";
+    }
+  }
+
+  &__image {
+    background-image: url("../Assets/candles__image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 34rem;
+    position: relative;
+
+    .legend {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1)
+      );
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem 2rem;
+      color: $white;
+      font-family: "playfair display";
+      text-align: center;
+
+      @include breakpoint-up(medium) {
+        padding: 1rem 2rem 2.5rem;
+      }
+
+      a {
+        color: $darkYellow;
+      }
+
+      p {
+        margin-top: 1rem;
+        font-family: "Raleway";
+      }
+    }
+  }
+}
+
+.eight {
+  margin: 6rem 0 4rem;
+  h1 {
+    margin-bottom: 4rem;
+    text-align: center;
+    color: $black;
+    font-family: "playfair display";
+  }
+
+  &__grid {
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    text-align: center;
+
+    @include breakpoint-up(medium) {
+      padding: 0 2rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__card {
+      background-image: url("../Assets/candles__image.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 20rem;
+      position: relative;
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .info {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        padding: 1rem 4rem;
+
+        h2 {
+          font-family: "playfair display";
+          font-size: $largeSize;
+          line-height: 1.5;
+        }
+
+        a {
+          margin-top: 2rem;
+          color: $darkYellow;
+          font-family: "Raleway";
+          letter-spacing: 0.75px;
+
+          i {
+            font-size: 1.1rem;
+            margin-right: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nineth {
+  background-color: $black;
+  color: $white;
+  .grid {
+    display: grid;
+    padding: 4rem;
+
+    form {
+      width: 100%;
+      input,
+      textarea {
+        margin-top: 1.5rem;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $white;
+        border-radius: 0;
+        font-family: "Raleway";
+
+        &::placeholder {
+          color: $white;
+          font-weight: 400;
+          font-family: "Raleway";
+        }
+      }
+
+      textarea {
+        width: 100%;
+      }
+
+      .submit__btn {
+        width: 100%;
+        background-color: $white;
+        color: $black;
+        padding: 1rem 0;
+        border: none;
+        font-size: $largeSize;
+        font-weight: 500;
+        font-family: "Raleway";
+      }
+    }
+
+    hr {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+      width: 60vw;
+      height: 1px;
+      margin: 4rem auto;
+    }
+
+    .info {
+      text-align: center;
+      h1 {
+        font-family: "playfair display";
+      }
+
+      h5 {
+        margin: 2rem 0;
+        font-family: "playfair display";
+      }
+
+      a {
+        font-family: "Raleway";
+        color: $white;
+      }
+
+      .socials {
+        margin: 2rem 0 0;
+        display: flex;
+        justify-content: center;
+
+        .fa-twitter {
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+}
+
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
+
+// &__image {
+//   background-image: url("../Assets/landing__image.png");
+
+//   /* Full height */
+//   height: 90vh;
+
+//   /* Center and scale the image nicely */
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+
+// &__text {
+//   height: 90vh;
+//   position: relative;
+//   text-align: left;
+//   background-color: $black;
+//   color: $white;
+
+//   .content {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+
+//     h1 {
+//       font-size: 5.5rem;
+//       font-family: "playfair display";
+//       letter-spacing: 2px;
+//       font-weight: 400;
+//     }
+
+//     p {
+//       margin: 1.75rem 0;
+//       font-size: 1.25rem;
+//       font-style: italic;
+//       font-family: "Raleway";
+//     }
+
+//     button {
+//       margin: 1.75rem 0 0 0;
+//       padding: 1rem;
+//       border: none;
+//       background-color: $white;
+//       color: $black;
+//       font-weight: 600;
+//       font-family: "Montserrat";
+//       font-size: 1.125rem;
+//     }
+//   }
+// }

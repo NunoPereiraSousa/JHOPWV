@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+}
+
+$darkBlue: #13161f;
+$darkYellow: #e8b45b;
+$greyBlue: #323540;
+$lightPurple: #9ea8cb;
+$invisiblePurple: rgba(158, 168, 203, 0.25);
+$invisibleDarkBlue: rgba(50, 53, 64, 0.81);
+$white: #ffffff;
+$invisibleWhite: rgba(255, 255, 255, 0.45);
+$invisibleWhite2: rgba(255, 255, 255, 0.22);
+$black: #000000;
+// $grey: #aa9243;
+
+// font-sizes
+
+$xSmallSize: 0.85rem;
+$smallSize: 0.9375rem;
+$regularSize: 1rem; // 16px
+$semiSize: 1.0625rem; // 17px
+$mediumSize: 1.125rem;
+$largeSize: 1.2rem;
+$xLargeSize: 3.125rem;
+$xLargeSizeTablet: 6.25rem;
+$xLargeSizeDesktop: 7.875rem;
+$xLargeSizeLargeScreen: 9.375rem;
