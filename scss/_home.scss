@@ -1,30 +1,46 @@
 .landing {
-  // padding-top: 11vh;
-  height: 100vh;
+  padding-top: 4rem;
 
   &__grid {
     height: 100%;
     display: grid;
+    background-color: $black;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 50vw);
+    }
 
     &__content {
-      height: 50vh;
-      background-color: $black;
-      padding: 8vw 10vw 0;
+      padding: 10vw;
+
+      @include breakpoint-up(medium) {
+        padding: 10vw 6vw;
+        align-self: center;
+      }
 
       h1 {
-        font-size: calc(3rem + 1vw);
+        font-size: calc(2.5rem + 1vw);
         font-family: "playfair display";
         letter-spacing: 2px;
         font-weight: 400;
         color: $white;
+
+        @include breakpoint-up(medium) {
+          font-size: 3rem;
+        }
       }
 
       p {
         margin: 1.75rem 0;
-        font-size: 1.25rem;
+        font-size: $mediumSize;
         font-style: italic;
-        font-family: "Raleway";
+        font-family: "Montserrat";
         color: $white;
+        letter-spacing: 1px;
+
+        @include breakpoint-up(medium) {
+          font-size: $regularSize;
+        }
       }
 
       button {
@@ -35,8 +51,8 @@
         background-color: transparent;
         color: $white;
         font-weight: 400;
-        font-family: "Raleway";
-        font-size: 1rem;
+        font-family: "Montserrat";
+        font-size: $regularSize;
       }
     }
 
@@ -48,74 +64,6 @@
       background-size: cover;
     }
   }
-
-  // .overlay {
-  //   // margin-top: 11vh;
-  //   height: 100vh;
-  //   width: 100%;
-  //   position: absolute;
-  //   z-index: 0;
-  //   top: 0%;
-  //   left: 0%;
-  //   background-color: rgba(0, 0, 0, 0.5);
-  // }
-
-  // &__content {
-  //   position: relative;
-  //   padding: 15vw 10vw;
-
-  //   h1 {
-  //     font-size: calc(3rem + 1vw);
-  //     font-family: "playfair display";
-  //     letter-spacing: 2px;
-  //     font-weight: 400;
-  //     color: $white;
-  //   }
-
-  //   p {
-  //     margin: 1.75rem 0;
-  //     font-size: 1.25rem;
-  //     font-style: italic;
-  //     font-family: "Raleway";
-  //     color: $white;
-  //   }
-
-  //   button {
-  //     margin: 0.75rem 0 0 0;
-  //     padding: 1rem;
-  //     border: 0.5px solid $white;
-  //     border-radius: 2px;
-  //     background-color: transparent;
-  //     color: $white;
-  //     font-weight: 500;
-  //     font-family: "Raleway";
-  //     font-size: 1.075rem;
-  //   }
-  // }
-
-  // &__scroll {
-  //   position: absolute;
-  //   right: 5%;
-  //   bottom: 15%;
-
-  //   p {
-  //     color: $white;
-  //     transform: rotate(90deg);
-  //     position: relative;
-  //     font-size: $regularSize;
-
-  //     &::after {
-  //       content: "";
-  //       position: absolute;
-  //       top: 50%;
-  //       left: 125%;
-  //       height: 2px;
-  //       background-color: $white;
-
-  //       animation: grow 3.6s ease-in-out infinite;
-  //     }
-  //   }
-  // }
 }
 
 .second {
@@ -125,7 +73,7 @@
   align-items: center;
 
   &__info {
-    padding: 4rem;
+    padding: 4rem 2rem;
 
     @include breakpoint-up(medium) {
       padding: 5rem;
@@ -149,7 +97,7 @@
     }
 
     p {
-      font-family: "Raleway";
+      font-family: "Montserrat";
       line-height: 1.425;
     }
   }
@@ -158,6 +106,10 @@
 .third {
   padding: 2rem 0 4rem;
   background-color: $black;
+
+  @include breakpoint-up(medium) {
+    padding: 2rem 0 5rem;
+  }
 
   &__info {
     padding: 2rem 4rem;
@@ -168,7 +120,7 @@
 
     @include breakpoint-up(medium) {
       grid-template-columns: repeat(2, 1fr);
-      padding: 2rem 4rem 4rem;
+      padding: 3rem 4rem 4rem;
     }
 
     h1,
@@ -205,12 +157,26 @@
       position: relative;
       min-height: 20rem;
 
-      .legend {
+      .overlay {
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.65);
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1)
+        );
+      }
+
+      .legend {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
         padding: 1.5rem 2.5rem;
 
         h3 {
@@ -219,8 +185,9 @@
         }
 
         a {
-          font-size: $xSmallSize;
-          color: $darkYellow;
+          margin-top: 0.5rem;
+          font-size: $smallSize;
+          color: $green;
         }
       }
     }
@@ -228,10 +195,7 @@
 }
 
 .fourth {
-}
-
-.fifth {
-  margin: 6rem 0 4rem;
+  margin: 4rem 0;
   h1 {
     margin-bottom: 4rem;
     text-align: center;
@@ -247,47 +211,41 @@
 
     @include breakpoint-up(medium) {
       grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
     }
   }
 
   img {
     min-height: 20rem;
+
+    @include breakpoint-up(medium) {
+      min-height: 10rem;
+    }
   }
 
-  a {
-    width: fit-content;
-    margin: 1rem;
-    padding-left: 2rem;
-    color: $black;
-    font-weight: 500;
-    position: relative;
-    transition: all 0.5s ease;
+  button {
+    display: flex;
+    justify-content: center;
+    margin: 4rem auto;
+    background-color: transparent;
+    border: 1px solid $black;
+    padding: 1.25rem 1.5rem;
+    font-family: "playfair display";
+    font-size: $mediumSize;
+    letter-spacing: 0.5px;
+  }
 
-    &:hover {
-      padding-left: 3.2rem;
-
-      &::before {
-        width: 40px;
-      }
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: -0%;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: $black;
-      width: 20px;
-      height: 2px;
-      transition: all 0.5s ease;
-    }
+  hr {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    width: 80vw;
+    height: 0.5px;
   }
 }
 
-.sixth {
+.fifth {
   &__info {
-    padding: 4rem;
+    padding: 0 4rem 4rem;
 
     h3 {
       font-family: "playfair display";
@@ -296,7 +254,7 @@
     }
 
     p {
-      font-family: "Raleway";
+      font-family: "Montserrat";
       margin-top: 2rem;
       text-align: center;
       font-weight: 500;
@@ -306,10 +264,16 @@
   }
 }
 
-.seventh {
+.sixth {
   margin-bottom: 4rem;
+
   &__info {
-    padding: 0 2rem;
+    padding: 0 1rem;
+
+    @include breakpoint-up(medium) {
+      padding: 0 2rem;
+    }
+
     h1 {
       margin-bottom: 4rem;
       font-weight: 500;
@@ -351,19 +315,25 @@
       }
 
       a {
-        color: $darkYellow;
+        color: $green;
+        font-family: "Montserrat";
       }
 
       p {
         margin-top: 1rem;
-        font-family: "Raleway";
+        font-family: "Montserrat";
       }
     }
   }
 }
 
-.eight {
-  margin: 6rem 0 4rem;
+.seventh {
+  margin: 4rem 0;
+
+  @include breakpoint-up(medium) {
+    margin: 5rem 0;
+  }
+
   h1 {
     margin-bottom: 4rem;
     text-align: center;
@@ -417,8 +387,8 @@
 
         a {
           margin-top: 2rem;
-          color: $darkYellow;
-          font-family: "Raleway";
+          color: $green;
+          font-family: "Montserrat";
           letter-spacing: 0.75px;
 
           i {
@@ -431,15 +401,21 @@
   }
 }
 
-.nineth {
+.eight {
   background-color: $black;
   color: $white;
+
   .grid {
     display: grid;
-    padding: 4rem;
+    padding: 2.5rem 4rem 4rem;
+
+    @include breakpoint-up(medium) {
+      padding: 3.5rem 4rem 5rem;
+    }
 
     form {
       width: 100%;
+
       input,
       textarea {
         margin-top: 1.5rem;
@@ -447,12 +423,16 @@
         border: none;
         border-bottom: 1px solid $white;
         border-radius: 0;
-        font-family: "Raleway";
+        font-family: "Montserrat";
+
+        @include breakpoint-up(medium) {
+          margin-top: 2.5rem;
+        }
 
         &::placeholder {
           color: $white;
           font-weight: 400;
-          font-family: "Raleway";
+          font-family: "Montserrat";
         }
       }
 
@@ -468,7 +448,7 @@
         border: none;
         font-size: $largeSize;
         font-weight: 500;
-        font-family: "Raleway";
+        font-family: "Montserrat";
       }
     }
 
@@ -492,7 +472,7 @@
       }
 
       a {
-        font-family: "Raleway";
+        font-family: "Montserrat";
         color: $white;
       }
 
@@ -505,6 +485,32 @@
           margin: 0 1rem;
         }
       }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-family: "Montserrat";
+  font-weight: 500;
+
+  p {
+    display: grid;
+    align-items: center;
+    row-gap: 1rem;
+    color: $black;
+    margin: 0;
+    line-height: 1.5;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: end;
+      white-space: nowrap;
+    }
+
+    span {
+      color: $green;
     }
   }
 }
@@ -534,55 +540,3 @@
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
   opacity: 0;
 }
-
-// &__image {
-//   background-image: url("../Assets/landing__image.png");
-
-//   /* Full height */
-//   height: 90vh;
-
-//   /* Center and scale the image nicely */
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-// }
-
-// &__text {
-//   height: 90vh;
-//   position: relative;
-//   text-align: left;
-//   background-color: $black;
-//   color: $white;
-
-//   .content {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-
-//     h1 {
-//       font-size: 5.5rem;
-//       font-family: "playfair display";
-//       letter-spacing: 2px;
-//       font-weight: 400;
-//     }
-
-//     p {
-//       margin: 1.75rem 0;
-//       font-size: 1.25rem;
-//       font-style: italic;
-//       font-family: "Raleway";
-//     }
-
-//     button {
-//       margin: 1.75rem 0 0 0;
-//       padding: 1rem;
-//       border: none;
-//       background-color: $white;
-//       color: $black;
-//       font-weight: 600;
-//       font-family: "Montserrat";
-//       font-size: 1.125rem;
-//     }
-//   }
-// }

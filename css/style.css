@@ -91,7 +91,8 @@ a:focus {
 }
 
 nav {
-  position: relative;
+  position: fixed;
+  top: 0;
   z-index: 999;
   width: 100%;
   padding: 0.75rem 2rem;
@@ -106,6 +107,9 @@ nav {
           align-items: center;
   background-color: #ffffff;
   font-family: "Montserrat";
+  overflow: hidden;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 nav .hamburger {
@@ -131,7 +135,7 @@ nav .hamburger div:nth-child(1) {
   width: 26px;
 }
 
-nav .hamburger div:nth-child(2), nav .hamburger div:nth-child(4) {
+nav .hamburger div:nth-child(2) {
   top: 50%;
   width: 26px;
 }
@@ -178,6 +182,12 @@ nav .nav__items {
   transition: all 0.5s ease-in-out;
 }
 
+@media (min-width: 40em) {
+  nav .nav__items {
+    padding: 1rem 4rem;
+  }
+}
+
 nav .nav__items.opened {
   right: 0%;
 }
@@ -213,21 +223,43 @@ nav .nav__items .socials {
 nav .nav__items .socials a {
   color: #000000;
   font-family: "Montserrat";
-  font-weight: 500;
+  font-weight: 400;
   color: #8ea294;
 }
 
 nav .nav__items .about {
   width: 100%;
-  background-color: #8ea294;
-  padding: 1rem 2rem;
   position: absolute;
   bottom: 0;
   left: 0;
   text-align: center;
 }
 
-nav .nav__items .about .desc {
+nav .nav__items .about__quote {
+  padding: 1rem 2rem;
+}
+
+nav .nav__items .about__quote hr {
+  background-color: #8ea294;
+  border: none;
+  width: 20vw;
+  height: 1px;
+  margin: 1rem auto;
+}
+
+nav .nav__items .about__quote p {
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: #000000;
+  margin: 0;
+  font-family: "Montserrat";
+  font-style: italic;
+}
+
+nav .nav__items .desc {
+  padding: 1rem 2rem;
+  background-color: #8ea294;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -237,26 +269,23 @@ nav .nav__items .about .desc {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
 }
 
-nav .nav__items .about .desc svg {
+nav .nav__items .desc svg {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-right: 1.5rem;
 }
 
-nav .nav__items .about .desc svg .path {
+nav .nav__items .desc svg .path {
   fill: none;
   stroke: #ffffff;
   stroke-width: 1.5px;
   stroke-miterlimit: 10;
 }
 
-nav .nav__items .about .desc p {
+nav .nav__items .desc p {
   font-size: 0.9375rem;
   letter-spacing: 0.1em;
   color: #ffffff;
@@ -315,35 +344,63 @@ nav button i {
 }
 
 .landing {
-  height: 100vh;
+  padding-top: 4rem;
 }
 
 .landing__grid {
   height: 100%;
   display: -ms-grid;
   display: grid;
+  background-color: #000000;
+}
+
+@media (min-width: 40em) {
+  .landing__grid {
+    -ms-grid-columns: (50vw)[2];
+        grid-template-columns: repeat(2, 50vw);
+  }
 }
 
 .landing__grid__content {
-  height: 50vh;
-  background-color: #000000;
-  padding: 8vw 10vw 0;
+  padding: 10vw;
+}
+
+@media (min-width: 40em) {
+  .landing__grid__content {
+    padding: 10vw 6vw;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 .landing__grid__content h1 {
-  font-size: calc(3rem + 1vw);
+  font-size: calc(2.5rem + 1vw);
   font-family: "playfair display";
   letter-spacing: 2px;
   font-weight: 400;
   color: #ffffff;
 }
 
+@media (min-width: 40em) {
+  .landing__grid__content h1 {
+    font-size: 3rem;
+  }
+}
+
 .landing__grid__content p {
   margin: 1.75rem 0;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-style: italic;
-  font-family: "Raleway";
+  font-family: "Montserrat";
   color: #ffffff;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 40em) {
+  .landing__grid__content p {
+    font-size: 1rem;
+  }
 }
 
 .landing__grid__content button {
@@ -354,7 +411,7 @@ nav button i {
   background-color: transparent;
   color: #ffffff;
   font-weight: 400;
-  font-family: "Raleway";
+  font-family: "Montserrat";
   font-size: 1rem;
 }
 
@@ -380,7 +437,7 @@ nav button i {
 }
 
 .second__info {
-  padding: 4rem;
+  padding: 4rem 2rem;
 }
 
 @media (min-width: 40em) {
@@ -407,13 +464,19 @@ nav button i {
 }
 
 .second__info p {
-  font-family: "Raleway";
+  font-family: "Montserrat";
   line-height: 1.425;
 }
 
 .third {
   padding: 2rem 0 4rem;
   background-color: #000000;
+}
+
+@media (min-width: 40em) {
+  .third {
+    padding: 2rem 0 5rem;
+  }
 }
 
 .third__info {
@@ -437,7 +500,7 @@ nav button i {
   .third__info {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-    padding: 2rem 4rem 4rem;
+    padding: 3rem 4rem 4rem;
   }
 }
 
@@ -481,12 +544,32 @@ nav button i {
   min-height: 20rem;
 }
 
-.third__grid .image__card .legend {
+.third__grid .image__card .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(black));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
+}
+
+.third__grid .image__card .legend {
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   padding: 1.5rem 2.5rem;
 }
 
@@ -496,22 +579,23 @@ nav button i {
 }
 
 .third__grid .image__card .legend a {
-  font-size: 0.85rem;
-  color: #e8b45b;
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  color: #8ea294;
 }
 
-.fifth {
-  margin: 6rem 0 4rem;
+.fourth {
+  margin: 4rem 0;
 }
 
-.fifth h1 {
+.fourth h1 {
   margin-bottom: 4rem;
   text-align: center;
   color: #000000;
   font-family: "playfair display";
 }
 
-.fifth .grid {
+.fourth .grid {
   padding: 0 2rem;
   display: -ms-grid;
   display: grid;
@@ -521,63 +605,59 @@ nav button i {
 }
 
 @media (min-width: 40em) {
-  .fifth .grid {
+  .fourth .grid {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 2rem;
+            column-gap: 2rem;
   }
 }
 
-.fifth img {
+.fourth img {
   min-height: 20rem;
 }
 
-.fifth a {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 1rem;
-  padding-left: 2rem;
-  color: #000000;
-  font-weight: 500;
-  position: relative;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+@media (min-width: 40em) {
+  .fourth img {
+    min-height: 10rem;
+  }
 }
 
-.fifth a:hover {
-  padding-left: 3.2rem;
+.fourth button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 4rem auto;
+  background-color: transparent;
+  border: 1px solid #000000;
+  padding: 1.25rem 1.5rem;
+  font-family: "playfair display";
+  font-size: 1.125rem;
+  letter-spacing: 0.5px;
 }
 
-.fifth a:hover::before {
-  width: 40px;
+.fourth hr {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  width: 80vw;
+  height: 0.5px;
 }
 
-.fifth a::before {
-  content: "";
-  position: absolute;
-  left: -0%;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background-color: #000000;
-  width: 20px;
-  height: 2px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+.fifth__info {
+  padding: 0 4rem 4rem;
 }
 
-.sixth__info {
-  padding: 4rem;
-}
-
-.sixth__info h3 {
+.fifth__info h3 {
   font-family: "playfair display";
   text-align: center;
   color: #000000;
 }
 
-.sixth__info p {
-  font-family: "Raleway";
+.fifth__info p {
+  font-family: "Montserrat";
   margin-top: 2rem;
   text-align: center;
   font-weight: 500;
@@ -585,15 +665,21 @@ nav button i {
   font-size: calc(1rem + 0.2vw);
 }
 
-.seventh {
+.sixth {
   margin-bottom: 4rem;
 }
 
-.seventh__info {
-  padding: 0 2rem;
+.sixth__info {
+  padding: 0 1rem;
 }
 
-.seventh__info h1 {
+@media (min-width: 40em) {
+  .sixth__info {
+    padding: 0 2rem;
+  }
+}
+
+.sixth__info h1 {
   margin-bottom: 4rem;
   font-weight: 500;
   text-align: center;
@@ -601,7 +687,7 @@ nav button i {
   font-family: "playfair display";
 }
 
-.seventh__image {
+.sixth__image {
   background-image: url("../Assets/candles__image.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -610,7 +696,7 @@ nav button i {
   position: relative;
 }
 
-.seventh__image .legend {
+.sixth__image .legend {
   width: 100%;
   height: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(black));
@@ -635,32 +721,39 @@ nav button i {
 }
 
 @media (min-width: 40em) {
-  .seventh__image .legend {
+  .sixth__image .legend {
     padding: 1rem 2rem 2.5rem;
   }
 }
 
-.seventh__image .legend a {
-  color: #e8b45b;
+.sixth__image .legend a {
+  color: #8ea294;
+  font-family: "Montserrat";
 }
 
-.seventh__image .legend p {
+.sixth__image .legend p {
   margin-top: 1rem;
-  font-family: "Raleway";
+  font-family: "Montserrat";
 }
 
-.eight {
-  margin: 6rem 0 4rem;
+.seventh {
+  margin: 4rem 0;
 }
 
-.eight h1 {
+@media (min-width: 40em) {
+  .seventh {
+    margin: 5rem 0;
+  }
+}
+
+.seventh h1 {
   margin-bottom: 4rem;
   text-align: center;
   color: #000000;
   font-family: "playfair display";
 }
 
-.eight__grid {
+.seventh__grid {
   display: -ms-grid;
   display: grid;
   row-gap: 2rem;
@@ -670,14 +763,14 @@ nav button i {
 }
 
 @media (min-width: 40em) {
-  .eight__grid {
+  .seventh__grid {
     padding: 0 2rem;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.eight__grid__card {
+.seventh__grid__card {
   background-image: url("../Assets/candles__image.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -686,7 +779,7 @@ nav button i {
   position: relative;
 }
 
-.eight__grid__card .overlay {
+.seventh__grid__card .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -695,7 +788,7 @@ nav button i {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.eight__grid__card .info {
+.seventh__grid__card .info {
   position: relative;
   height: 100%;
   display: -webkit-box;
@@ -715,82 +808,95 @@ nav button i {
   padding: 1rem 4rem;
 }
 
-.eight__grid__card .info h2 {
+.seventh__grid__card .info h2 {
   font-family: "playfair display";
   font-size: 1.2rem;
   line-height: 1.5;
 }
 
-.eight__grid__card .info a {
+.seventh__grid__card .info a {
   margin-top: 2rem;
-  color: #e8b45b;
-  font-family: "Raleway";
+  color: #8ea294;
+  font-family: "Montserrat";
   letter-spacing: 0.75px;
 }
 
-.eight__grid__card .info a i {
+.seventh__grid__card .info a i {
   font-size: 1.1rem;
   margin-right: 0.75rem;
 }
 
-.nineth {
+.eight {
   background-color: #000000;
   color: #ffffff;
 }
 
-.nineth .grid {
+.eight .grid {
   display: -ms-grid;
   display: grid;
-  padding: 4rem;
+  padding: 2.5rem 4rem 4rem;
 }
 
-.nineth .grid form {
+@media (min-width: 40em) {
+  .eight .grid {
+    padding: 3.5rem 4rem 5rem;
+  }
+}
+
+.eight .grid form {
   width: 100%;
 }
 
-.nineth .grid form input,
-.nineth .grid form textarea {
+.eight .grid form input,
+.eight .grid form textarea {
   margin-top: 1.5rem;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #ffffff;
   border-radius: 0;
-  font-family: "Raleway";
+  font-family: "Montserrat";
 }
 
-.nineth .grid form input::-webkit-input-placeholder,
-.nineth .grid form textarea::-webkit-input-placeholder {
+@media (min-width: 40em) {
+  .eight .grid form input,
+  .eight .grid form textarea {
+    margin-top: 2.5rem;
+  }
+}
+
+.eight .grid form input::-webkit-input-placeholder,
+.eight .grid form textarea::-webkit-input-placeholder {
   color: #ffffff;
   font-weight: 400;
-  font-family: "Raleway";
+  font-family: "Montserrat";
 }
 
-.nineth .grid form input:-ms-input-placeholder,
-.nineth .grid form textarea:-ms-input-placeholder {
+.eight .grid form input:-ms-input-placeholder,
+.eight .grid form textarea:-ms-input-placeholder {
   color: #ffffff;
   font-weight: 400;
-  font-family: "Raleway";
+  font-family: "Montserrat";
 }
 
-.nineth .grid form input::-ms-input-placeholder,
-.nineth .grid form textarea::-ms-input-placeholder {
+.eight .grid form input::-ms-input-placeholder,
+.eight .grid form textarea::-ms-input-placeholder {
   color: #ffffff;
   font-weight: 400;
-  font-family: "Raleway";
+  font-family: "Montserrat";
 }
 
-.nineth .grid form input::placeholder,
-.nineth .grid form textarea::placeholder {
+.eight .grid form input::placeholder,
+.eight .grid form textarea::placeholder {
   color: #ffffff;
   font-weight: 400;
-  font-family: "Raleway";
+  font-family: "Montserrat";
 }
 
-.nineth .grid form textarea {
+.eight .grid form textarea {
   width: 100%;
 }
 
-.nineth .grid form .submit__btn {
+.eight .grid form .submit__btn {
   width: 100%;
   background-color: #ffffff;
   color: #000000;
@@ -798,10 +904,10 @@ nav button i {
   border: none;
   font-size: 1.2rem;
   font-weight: 500;
-  font-family: "Raleway";
+  font-family: "Montserrat";
 }
 
-.nineth .grid hr {
+.eight .grid hr {
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
   width: 60vw;
@@ -809,25 +915,25 @@ nav button i {
   margin: 4rem auto;
 }
 
-.nineth .grid .info {
+.eight .grid .info {
   text-align: center;
 }
 
-.nineth .grid .info h1 {
+.eight .grid .info h1 {
   font-family: "playfair display";
 }
 
-.nineth .grid .info h5 {
+.eight .grid .info h5 {
   margin: 2rem 0;
   font-family: "playfair display";
 }
 
-.nineth .grid .info a {
-  font-family: "Raleway";
+.eight .grid .info a {
+  font-family: "Montserrat";
   color: #ffffff;
 }
 
-.nineth .grid .info .socials {
+.eight .grid .info .socials {
   margin: 2rem 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -837,8 +943,40 @@ nav button i {
           justify-content: center;
 }
 
-.nineth .grid .info .socials .fa-twitter {
+.eight .grid .info .socials .fa-twitter {
   margin: 0 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+footer p {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 1rem;
+  color: #000000;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (min-width: 40em) {
+  footer p {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+    white-space: nowrap;
+  }
+}
+
+footer p span {
+  color: #8ea294;
 }
 
 .mfp-fade.mfp-bg {
