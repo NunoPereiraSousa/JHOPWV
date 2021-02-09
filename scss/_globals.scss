@@ -31,16 +31,16 @@ a:focus {
   border: none;
 }
 
-// .hide-for-mobile {
-//   // hide for mobile and tablet
-//   @include breakpoint-down(medium) {
-//     display: none;
-//   }
-// }
+.hide-for-mobile {
+  // hide for mobile and tablet
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
 
-// .hide-for-desktop {
-//   // hide for mobile and desktop
-//   @include breakpoint-up(large) {
-//     display: none;
-//   }
-// }
+.hide-for-desktop {
+  // hide for mobile and desktop
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

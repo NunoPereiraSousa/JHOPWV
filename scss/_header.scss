@@ -1,20 +1,154 @@
 nav {
-  position: fixed;
-  top: 0;
+  position: relative;
+  // top: 0;
   z-index: 999;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0.75rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: $white;
   font-family: "Montserrat";
 
+  .hamburger {
+    width: 3rem;
+    height: 18px;
+    position: relative;
+
+    div {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 1px;
+      background-color: $black;
+      transition: top 0.2s ease-in-out 0.4s, transform 0.4s ease-in-out,
+        opacity 0.2s ease-in-out 0.2s, left 0.2s ease-in-out,
+        width 0.2s ease-in-out -0.2s;
+      &:nth-child(1) {
+        top: 0;
+        width: 26px;
+      }
+      &:nth-child(2),
+      &:nth-child(4) {
+        top: 50%;
+        width: 26px;
+      }
+      &:nth-child(3) {
+        top: 100%;
+        width: 26px;
+      }
+    }
+    &.cross {
+      div {
+        transition: all 0.2s ease-in-out, transform 0.4s ease-in-out 0.2s,
+          opacity 0.2s ease-in-out 0.2s, width 0.6s ease-in-out -0.2s;
+
+        &:nth-child(1) {
+          top: 50%;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          top: 50%;
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          top: 50%;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .nav__items {
+    height: 100vh;
+    width: 100vw;
+    padding: 1rem 2rem;
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+
+    &.opened {
+      right: 0%;
+    }
+
+    &__titles {
+      margin: 6rem 0 0 0;
+
+      h3 {
+        margin-bottom: 1.5rem;
+
+        .nav__links {
+          text-decoration: none;
+          color: $black;
+          font-weight: 400;
+          letter-spacing: 1px;
+          font-family: "playfair display";
+          font-size: $xLargeSizePhone;
+        }
+      }
+    }
+
+    .socials {
+      margin-top: 4.375rem;
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+
+      a {
+        color: $black;
+        font-family: "Montserrat";
+        font-weight: 500;
+        color: $green;
+      }
+    }
+
+    .about {
+      width: 100%;
+      background-color: $green;
+      padding: 1rem 2rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      text-align: center;
+
+      .desc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+
+        svg {
+          width: fit-content;
+          margin-right: 1.5rem;
+
+          .path {
+            fill: none;
+            stroke: $white;
+            stroke-width: 1.5px;
+            stroke-miterlimit: 10;
+          }
+        }
+
+        p {
+          font-size: $smallSize;
+          letter-spacing: 0.1em;
+          color: $white;
+          text-transform: uppercase;
+          margin: 0;
+          font-family: "Montserrat";
+        }
+      }
+    }
+  }
+
   .logo__quote {
     display: flex;
     align-items: center;
     img {
-      max-width: 4rem;
+      max-width: 3rem;
       margin-right: 2rem;
     }
 

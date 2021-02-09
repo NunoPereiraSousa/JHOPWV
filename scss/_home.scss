@@ -1,80 +1,121 @@
 .landing {
-  padding-top: 11vh;
+  // padding-top: 11vh;
   height: 100vh;
-  background-image: url("../Assets/landing__image.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
 
-  .overlay {
-    // margin-top: 11vh;
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-    top: 0%;
-    left: 0%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+  &__grid {
+    height: 100%;
+    display: grid;
 
-  &__content {
-    position: relative;
-    padding: 15vw 10vw;
+    &__content {
+      height: 50vh;
+      background-color: $black;
+      padding: 8vw 10vw 0;
 
-    h1 {
-      font-size: calc(3rem + 1vw);
-      font-family: "playfair display";
-      letter-spacing: 2px;
-      font-weight: 400;
-      color: $white;
-    }
+      h1 {
+        font-size: calc(3rem + 1vw);
+        font-family: "playfair display";
+        letter-spacing: 2px;
+        font-weight: 400;
+        color: $white;
+      }
 
-    p {
-      margin: 1.75rem 0;
-      font-size: 1.25rem;
-      font-style: italic;
-      font-family: "Raleway";
-      color: $white;
-    }
+      p {
+        margin: 1.75rem 0;
+        font-size: 1.25rem;
+        font-style: italic;
+        font-family: "Raleway";
+        color: $white;
+      }
 
-    button {
-      margin: 0.75rem 0 0 0;
-      padding: 1rem;
-      border: 0.5px solid $white;
-      border-radius: 2px;
-      background-color: transparent;
-      color: $white;
-      font-weight: 500;
-      font-family: "Raleway";
-      font-size: 1.075rem;
-    }
-  }
-
-  &__scroll {
-    position: absolute;
-    right: 5%;
-    bottom: 15%;
-
-    p {
-      color: $white;
-      transform: rotate(90deg);
-      position: relative;
-      font-size: $regularSize;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 125%;
-        height: 2px;
-        background-color: $white;
-
-        animation: grow 3.6s ease-in-out infinite;
+      button {
+        margin: 0.75rem 0 0 0;
+        padding: 0.75rem 1rem;
+        border: 0.5px solid $invisibleWhite;
+        border-radius: 2px;
+        background-color: transparent;
+        color: $white;
+        font-weight: 400;
+        font-family: "Raleway";
+        font-size: 1rem;
       }
     }
+
+    &__image {
+      height: 50vh;
+      background-image: url("../Assets/landing__image.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
+
+  // .overlay {
+  //   // margin-top: 11vh;
+  //   height: 100vh;
+  //   width: 100%;
+  //   position: absolute;
+  //   z-index: 0;
+  //   top: 0%;
+  //   left: 0%;
+  //   background-color: rgba(0, 0, 0, 0.5);
+  // }
+
+  // &__content {
+  //   position: relative;
+  //   padding: 15vw 10vw;
+
+  //   h1 {
+  //     font-size: calc(3rem + 1vw);
+  //     font-family: "playfair display";
+  //     letter-spacing: 2px;
+  //     font-weight: 400;
+  //     color: $white;
+  //   }
+
+  //   p {
+  //     margin: 1.75rem 0;
+  //     font-size: 1.25rem;
+  //     font-style: italic;
+  //     font-family: "Raleway";
+  //     color: $white;
+  //   }
+
+  //   button {
+  //     margin: 0.75rem 0 0 0;
+  //     padding: 1rem;
+  //     border: 0.5px solid $white;
+  //     border-radius: 2px;
+  //     background-color: transparent;
+  //     color: $white;
+  //     font-weight: 500;
+  //     font-family: "Raleway";
+  //     font-size: 1.075rem;
+  //   }
+  // }
+
+  // &__scroll {
+  //   position: absolute;
+  //   right: 5%;
+  //   bottom: 15%;
+
+  //   p {
+  //     color: $white;
+  //     transform: rotate(90deg);
+  //     position: relative;
+  //     font-size: $regularSize;
+
+  //     &::after {
+  //       content: "";
+  //       position: absolute;
+  //       top: 50%;
+  //       left: 125%;
+  //       height: 2px;
+  //       background-color: $white;
+
+  //       animation: grow 3.6s ease-in-out infinite;
+  //     }
+  //   }
+  // }
 }
 
 .second {
@@ -85,6 +126,10 @@
 
   &__info {
     padding: 4rem;
+
+    @include breakpoint-up(medium) {
+      padding: 5rem;
+    }
 
     h1,
     h5,
@@ -121,6 +166,11 @@
     justify-content: center;
     align-items: center;
 
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2rem 4rem 4rem;
+    }
+
     h1,
     h5 {
       text-align: center;
@@ -137,13 +187,14 @@
   }
 
   &__grid {
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     display: grid;
     row-gap: 2rem;
     column-gap: 2rem;
 
     @include breakpoint-up(medium) {
       grid-template-columns: repeat(2, 1fr);
+      padding: 1rem 2rem;
     }
 
     .image__card {
