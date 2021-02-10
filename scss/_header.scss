@@ -9,20 +9,37 @@ nav {
   align-items: center;
   background-color: $white;
   font-family: "Montserrat";
-  overflow: hidden;
   transition: all 0.4s ease;
 
   .nav__items__desktop {
     display: flex;
 
     .nav__links {
-      margin: 0 1.5rem;
+      margin: 1rem 1.5rem;
       text-decoration: none;
       color: $black;
       font-weight: 400;
       letter-spacing: 1px;
       font-family: "playfair display";
       font-size: $mediumSize;
+      position: relative;
+
+      &:hover::before {
+        opacity: 1;
+        bottom: -30%;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -50%;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $green;
+        opacity: 0;
+        transition: all 400ms ease;
+      }
     }
   }
 

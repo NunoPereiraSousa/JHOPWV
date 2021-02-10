@@ -1,0 +1,17 @@
+@import "_variables.scss";
+
+.cursor {
+  height: 2em;
+  width: 2em;
+  position: absolute;
+  background: $white;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  transition-property: background, width, height, transition;
+}
+
+.image__one {
+  height: 6em;
+  width: 6em;
+  background: $green;
+}
