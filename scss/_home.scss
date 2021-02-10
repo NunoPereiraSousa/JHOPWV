@@ -17,7 +17,7 @@
     }
 
     &__content {
-      padding: 10vw;
+      padding: 14vw 10vw;
 
       @include breakpoint-up(medium) {
         height: 100%;
@@ -173,7 +173,7 @@
     }
 
     h5 {
-      margin: 2rem 0 0;
+      margin: 2rem 0;
       font-size: 1rem;
       font-style: italic;
       line-height: 1.6;
@@ -197,33 +197,28 @@
     }
 
     .image__card {
-      // position: relative;
-      min-height: 20rem;
+      position: relative;
 
-      &.one {
-        background-image: url("../Assets/homeless_outreach.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+      // &.one {
+      //   // background-image: url("../Assets/Help/homeless_outreach.jpg");
+      //   background-position: center;
+      //   background-repeat: no-repeat;
+      //   background-size: cover;
+      // }
 
-      &.two {
-        background-image: url("../Assets/food_donation.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
+      // &.two {
+      //   // background-image: url("../Assets/Help/food_donation.jpg");
+      //   background-position: center;
+      //   background-repeat: no-repeat;
+      //   background-size: cover;
+      // }
 
-      &.three {
-        background-image: url("../Assets/health_clinic.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-      @include breakpoint-up(xLarge) {
-        min-height: 26rem;
-      }
+      // &.three {
+      //   // background-image: url("../Assets/Help/health_clinic.jpg");
+      //   background-position: center;
+      //   background-repeat: no-repeat;
+      //   background-size: cover;
+      // }
 
       // .overlay {
       //   position: absolute;
@@ -239,14 +234,19 @@
       //   );
       // }
 
+      img {
+        max-width: 100%;
+      }
+
+      @include breakpoint-up(xLarge) {
+        min-height: 26rem;
+      }
+
       .legend {
-        position: relative;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        // position: relative;
+        // height: 100%;
         justify-content: flex-end;
-        padding: 1.5rem 2.5rem;
+        padding: 1.5rem 2.5rem 1.5rem 0;
 
         h3 {
           color: $white;
@@ -264,7 +264,7 @@
 }
 
 .fourth {
-  margin: 4rem 0;
+  margin: 6rem 0 10rem;
 
   h1 {
     margin-bottom: 4rem;
@@ -282,19 +282,49 @@
   }
 
   .grid {
-    padding: 0 2rem;
-    display: grid;
-    row-gap: 2rem;
-    column-gap: 3rem;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
 
-    @include breakpoint-up(medium) {
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 2rem;
+    .previous {
+      margin: 0 0 0 4vw;
+      left: -8%;
+      border: none;
+
+      @include breakpoint-down(small) {
+        display: none;
+      }
+    }
+
+    .next {
+      margin: 0 0 0 4vw;
+      right: -2.5%;
+      border: none;
+
+      @include breakpoint-down(small) {
+        display: none;
+      }
+
+      svg {
+        fill: $white;
+      }
+    }
+
+    .flickity-page-dots {
+      bottom: -50px;
+
+      .dot.is-selected {
+        background: $green;
+      }
     }
 
     .card {
+      position: relative;
+      width: 75vw;
+      margin-right: 4vw;
+
       img {
-        min-height: 10rem;
+        max-width: 100%;
 
         @include breakpoint-up(medium) {
           max-height: 20rem;
@@ -310,7 +340,7 @@
   button {
     display: flex;
     justify-content: center;
-    margin: 4rem auto;
+    margin: 6rem auto;
     background-color: transparent;
     border: 1px solid $black;
     padding: 1.25rem 1.5rem;

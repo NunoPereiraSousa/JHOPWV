@@ -11,6 +11,10 @@
 
     <link
       rel="stylesheet"
+      href="https://unpkg.com/flickity@2.2.1/dist/flickity.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
     <link
@@ -113,6 +117,7 @@
       </div>
       <div class="third__grid">
         <div class="image__card one">
+          <img src="./Assets/Help/homeless_outreach.jpg" alt="" />
           <div class="overlay"></div>
           <div class="legend">
             <h3>HOMELESS OUTREACH</h3>
@@ -120,6 +125,7 @@
           </div>
         </div>
         <div class="image__card two">
+          <img src="./Assets/Help/food_donation.jpg" alt="" />
           <div class="overlay"></div>
           <div class="legend">
             <h3>FOOD DONATION DROP-OFF</h3>
@@ -127,6 +133,7 @@
           </div>
         </div>
         <div class="image__card three">
+          <img src="./Assets/Help/health_clinic.jpg" alt="" />
           <div class="overlay"></div>
           <div class="legend">
             <h3>HEALTH CLINIC</h3>
@@ -137,22 +144,34 @@
     </section>
     <section class="fourth">
       <h1>GALLERY</h1>
-      <div class="grid fifth__gallery">
+      <div class="grid fifth__gallery js-slideshow">
         <div class="card">
-          <img src="./Assets/carousel__image.jpg" alt="" />
+          <img src="./Assets/Gallery/carousel_1.png" alt="" />
         </div>
         <div class="card">
-          <img src="./Assets/carousel__image.jpg" alt="" />
+          <img src="./Assets/Gallery/carousel_2.jpg" alt="" />
         </div>
         <div class="card">
-          <img src="./Assets/carousel__image.jpg" alt="" />
+          <img src="./Assets/Gallery/carousel_3.jpg" alt="" />
         </div>
         <div class="card">
-          <img src="./Assets/carousel__image.jpg" alt="" />
+          <img src="./Assets/Gallery/carousel_4.jpg" alt="" />
         </div>
+        <div class="card">
+          <img src="./Assets/Gallery/carousel_5.jpg" alt="" />
+        </div>
+        <div class="card">
+          <img src="./Assets/Gallery/carousel_6.jpg" alt="" />
+        </div>
+        <div class="card">
+          <img src="./Assets/Gallery/carousel_7.jpg" alt="" />
+        </div>
+        <!-- <div class="card">
+          <img src="./Assets/Gallery/carousel_8.jpg" alt="" />
+        </div> -->
       </div>
-      <button>See complete gallery</button>
-      <hr />
+      <!-- <button>See complete gallery</button> -->
+      <!-- <hr /> -->
     </section>
     <section class="fifth">
       <div class="fifth__info">
@@ -306,9 +325,12 @@
     </footer>
 
     <!-- Optional JavaScript -->
+    <!-- <script src="./js/images.js"></script> -->
+    <script src="https://unpkg.com/flickity@2.2.1/dist/flickity.pkgd.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./js/navbar.js"></script>
     <script src="./js/email.js"></script>
+    <script src="./js/carousel.js"></script>
     <!-- <script src="./js/mouse__cursor.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

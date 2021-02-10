@@ -430,7 +430,7 @@ nav button i {
 }
 
 .landing__grid__content {
-  padding: 10vw;
+  padding: 14vw 10vw;
 }
 
 @media (min-width: 40em) {
@@ -627,7 +627,7 @@ nav button i {
 }
 
 .third__info h5 {
-  margin: 2rem 0 0;
+  margin: 2rem 0;
   font-size: 1rem;
   font-style: italic;
   line-height: 1.6;
@@ -659,28 +659,11 @@ nav button i {
 }
 
 .third__grid .image__card {
-  min-height: 20rem;
+  position: relative;
 }
 
-.third__grid .image__card.one {
-  background-image: url("../Assets/homeless_outreach.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.third__grid .image__card.two {
-  background-image: url("../Assets/food_donation.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.third__grid .image__card.three {
-  background-image: url("../Assets/health_clinic.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.third__grid .image__card img {
+  max-width: 100%;
 }
 
 @media (min-width: 75em) {
@@ -690,22 +673,10 @@ nav button i {
 }
 
 .third__grid .image__card .legend {
-  position: relative;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 2.5rem 1.5rem 0;
 }
 
 .third__grid .image__card .legend h3 {
@@ -720,7 +691,7 @@ nav button i {
 }
 
 .fourth {
-  margin: 4rem 0;
+  margin: 6rem 0 10rem;
 }
 
 .fourth h1 {
@@ -743,25 +714,55 @@ nav button i {
 }
 
 .fourth .grid {
-  padding: 0 2rem;
-  display: -ms-grid;
-  display: grid;
-  row-gap: 2rem;
-  -webkit-column-gap: 3rem;
-          column-gap: 3rem;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
 }
 
-@media (min-width: 40em) {
-  .fourth .grid {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-    -webkit-column-gap: 2rem;
-            column-gap: 2rem;
+.fourth .grid .previous {
+  margin: 0 0 0 4vw;
+  left: -8%;
+  border: none;
+}
+
+@media (max-width: 39.9375em) {
+  .fourth .grid .previous {
+    display: none;
   }
 }
 
+.fourth .grid .next {
+  margin: 0 0 0 4vw;
+  right: -2.5%;
+  border: none;
+}
+
+@media (max-width: 39.9375em) {
+  .fourth .grid .next {
+    display: none;
+  }
+}
+
+.fourth .grid .next svg {
+  fill: #ffffff;
+}
+
+.fourth .grid .flickity-page-dots {
+  bottom: -50px;
+}
+
+.fourth .grid .flickity-page-dots .dot.is-selected {
+  background: #8ea294;
+}
+
+.fourth .grid .card {
+  position: relative;
+  width: 75vw;
+  margin-right: 4vw;
+}
+
 .fourth .grid .card img {
-  min-height: 10rem;
+  max-width: 100%;
 }
 
 @media (min-width: 40em) {
@@ -783,7 +784,7 @@ nav button i {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 4rem auto;
+  margin: 6rem auto;
   background-color: transparent;
   border: 1px solid #000000;
   padding: 1.25rem 1.5rem;
