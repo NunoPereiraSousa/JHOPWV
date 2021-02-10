@@ -6,16 +6,30 @@
     display: grid;
     background-color: $black;
 
-    @include breakpoint-up(medium) {
+    // @include breakpoint-up(medium) {
+    //   grid-template-columns: repeat(2, 50vw);
+    //   grid-template-rows: 100vh;
+    // }
+
+    @include breakpoint-up(xLarge) {
       grid-template-columns: repeat(2, 50vw);
+      grid-template-rows: 100vh;
     }
 
     &__content {
       padding: 10vw;
 
       @include breakpoint-up(medium) {
+        height: 100%;
         padding: 10vw 6vw;
         align-self: center;
+        // order: 2;
+      }
+
+      @include breakpoint-up(xLarge) {
+        height: 100%;
+        padding: 10vw;
+        order: 2;
       }
 
       h1 {
@@ -27,6 +41,10 @@
 
         @include breakpoint-up(medium) {
           font-size: 3rem;
+        }
+
+        @include breakpoint-up(xLarge) {
+          font-size: $xLargeSizeDesktop;
         }
       }
 
@@ -58,10 +76,18 @@
 
     &__image {
       height: 50vh;
-      background-image: url("../Assets/landing__image.png");
+      background-image: url("../Assets/landing__image.jpg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+
+      // @include breakpoint-up(medium) {
+      //   height: 100%;
+      // }
+
+      @include breakpoint-up(xLarge) {
+        height: 100%;
+      }
     }
   }
 }
@@ -79,6 +105,10 @@
       padding: 5rem;
     }
 
+    @include breakpoint-up(xLarge) {
+      padding: 8rem 20vw;
+    }
+
     h1,
     h5,
     p {
@@ -94,11 +124,19 @@
       font-size: 1rem;
       font-style: italic;
       font-family: "playfair display";
+
+      @include breakpoint-up(xLarge) {
+        margin: 3rem 0;
+      }
     }
 
     p {
       font-family: "Montserrat";
       line-height: 1.425;
+
+      @include breakpoint-up(xLarge) {
+        line-height: 2;
+      }
     }
   }
 }
@@ -109,6 +147,10 @@
 
   @include breakpoint-up(medium) {
     padding: 2rem 0 5rem;
+  }
+
+  @include breakpoint-up(xLarge) {
+    padding: 6rem 4rem;
   }
 
   &__info {
@@ -135,6 +177,7 @@
       font-size: 1rem;
       font-style: italic;
       line-height: 1.6;
+      font-family: "Montserrat";
     }
   }
 
@@ -149,13 +192,38 @@
       padding: 1rem 2rem;
     }
 
+    @include breakpoint-up(xLarge) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     .image__card {
-      background-image: url("../Assets/landing__image.png");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
       position: relative;
       min-height: 20rem;
+
+      &.one {
+        background-image: url("../Assets/homeless_outreach.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      &.two {
+        background-image: url("../Assets/food_donation.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      &.three {
+        background-image: url("../Assets/health_clinic.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      @include breakpoint-up(xLarge) {
+        min-height: 26rem;
+      }
 
       .overlay {
         position: absolute;
@@ -166,7 +234,7 @@
         background: linear-gradient(
           to bottom,
           rgba(0, 0, 0, 0),
-          rgba(0, 0, 0, 1)
+          rgba(0, 0, 0, 1) 85%
         );
       }
 
@@ -196,11 +264,20 @@
 
 .fourth {
   margin: 4rem 0;
+
   h1 {
     margin-bottom: 4rem;
     text-align: center;
     color: $black;
     font-family: "playfair display";
+  }
+
+  @include breakpoint-up(xLarge) {
+    padding: 4rem 4rem;
+  }
+
+  @include breakpoint-up(xLarge) {
+    padding: 4rem 4rem 0;
   }
 
   .grid {
@@ -213,13 +290,19 @@
       grid-template-columns: repeat(2, 1fr);
       column-gap: 2rem;
     }
-  }
 
-  img {
-    min-height: 20rem;
+    .card {
+      img {
+        min-height: 10rem;
 
-    @include breakpoint-up(medium) {
-      min-height: 10rem;
+        @include breakpoint-up(medium) {
+          max-height: 20rem;
+        }
+
+        @include breakpoint-up(xLarge) {
+          max-height: 24rem;
+        }
+      }
     }
   }
 
@@ -247,10 +330,18 @@
   &__info {
     padding: 0 4rem 4rem;
 
+    @include breakpoint-up(xLarge) {
+      padding: 0 20rem 4rem;
+    }
+
     h3 {
       font-family: "playfair display";
       text-align: center;
       color: $black;
+
+      @include breakpoint-up(xLarge) {
+        line-height: 1.55;
+      }
     }
 
     p {
@@ -260,6 +351,11 @@
       font-weight: 500;
       font-style: italic;
       font-size: calc(1rem + 0.2vw);
+      color: $invisibleBlack;
+
+      @include breakpoint-up(xLarge) {
+        font-size: $mediumSize;
+      }
     }
   }
 }
@@ -272,6 +368,10 @@
 
     @include breakpoint-up(medium) {
       padding: 0 2rem;
+    }
+
+    @include breakpoint-up(xLarge) {
+      padding: 0 8rem;
     }
 
     h1 {
@@ -334,6 +434,10 @@
     margin: 5rem 0;
   }
 
+  @include breakpoint-up(xLarge) {
+    margin: 8rem 6rem;
+  }
+
   h1 {
     margin-bottom: 4rem;
     text-align: center;
@@ -379,6 +483,10 @@
         color: $white;
         padding: 1rem 4rem;
 
+        @include breakpoint-up(xLarge) {
+          padding: 1rem 10rem;
+        }
+
         h2 {
           font-family: "playfair display";
           font-size: $largeSize;
@@ -413,8 +521,17 @@
       padding: 3.5rem 4rem 5rem;
     }
 
+    @include breakpoint-up(xLarge) {
+      padding: 4.5rem 10vw 6rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     form {
       width: 100%;
+
+      @include breakpoint-up(xLarge) {
+        order: 2;
+      }
 
       input,
       textarea {
@@ -462,8 +579,18 @@
 
     .info {
       text-align: center;
+
+      @include breakpoint-up(xLarge) {
+        align-self: center;
+        justify-self: start;
+      }
+
       h1 {
         font-family: "playfair display";
+
+        @include breakpoint-up(xLarge) {
+          justify-items: center;
+        }
       }
 
       h5 {
@@ -509,8 +636,8 @@ footer {
       white-space: nowrap;
     }
 
-    span {
-      color: $green;
+    @include breakpoint-up(xLarge) {
+      justify-items: center;
     }
   }
 }

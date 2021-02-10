@@ -80,11 +80,11 @@ a:focus {
 
 @media (max-width: 63.9375em) {
   .hide-for-mobile {
-    display: none;
+    display: none !important;
   }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 75em) {
   .hide-for-desktop {
     display: none;
   }
@@ -110,6 +110,22 @@ nav {
   overflow: hidden;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+
+nav .nav__items__desktop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav .nav__items__desktop .nav__links {
+  margin: 0 1.5rem;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-family: "playfair display";
+  font-size: 1.125rem;
 }
 
 nav .hamburger {
@@ -354,10 +370,12 @@ nav button i {
   background-color: #000000;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 75em) {
   .landing__grid {
     -ms-grid-columns: (50vw)[2];
         grid-template-columns: repeat(2, 50vw);
+    -ms-grid-rows: 100vh;
+        grid-template-rows: 100vh;
   }
 }
 
@@ -367,10 +385,21 @@ nav button i {
 
 @media (min-width: 40em) {
   .landing__grid__content {
+    height: 100%;
     padding: 10vw 6vw;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
+  }
+}
+
+@media (min-width: 75em) {
+  .landing__grid__content {
+    height: 100%;
+    padding: 10vw;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 
@@ -385,6 +414,12 @@ nav button i {
 @media (min-width: 40em) {
   .landing__grid__content h1 {
     font-size: 3rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .landing__grid__content h1 {
+    font-size: 4.375rem;
   }
 }
 
@@ -417,10 +452,16 @@ nav button i {
 
 .landing__grid__image {
   height: 50vh;
-  background-image: url("../Assets/landing__image.png");
+  background-image: url("../Assets/landing__image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media (min-width: 75em) {
+  .landing__grid__image {
+    height: 100%;
+  }
 }
 
 .second {
@@ -446,6 +487,12 @@ nav button i {
   }
 }
 
+@media (min-width: 75em) {
+  .second__info {
+    padding: 8rem 20vw;
+  }
+}
+
 .second__info h1,
 .second__info h5,
 .second__info p {
@@ -463,9 +510,21 @@ nav button i {
   font-family: "playfair display";
 }
 
+@media (min-width: 75em) {
+  .second__info h5 {
+    margin: 3rem 0;
+  }
+}
+
 .second__info p {
   font-family: "Montserrat";
   line-height: 1.425;
+}
+
+@media (min-width: 75em) {
+  .second__info p {
+    line-height: 2;
+  }
 }
 
 .third {
@@ -476,6 +535,12 @@ nav button i {
 @media (min-width: 40em) {
   .third {
     padding: 2rem 0 5rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .third {
+    padding: 6rem 4rem;
   }
 }
 
@@ -516,6 +581,7 @@ nav button i {
   font-size: 1rem;
   font-style: italic;
   line-height: 1.6;
+  font-family: "Montserrat";
 }
 
 .third__grid {
@@ -535,13 +601,43 @@ nav button i {
   }
 }
 
+@media (min-width: 75em) {
+  .third__grid {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .third__grid .image__card {
-  background-image: url("../Assets/landing__image.png");
+  position: relative;
+  min-height: 20rem;
+}
+
+.third__grid .image__card.one {
+  background-image: url("../Assets/homeless_outreach.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  min-height: 20rem;
+}
+
+.third__grid .image__card.two {
+  background-image: url("../Assets/food_donation.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.third__grid .image__card.three {
+  background-image: url("../Assets/health_clinic.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 75em) {
+  .third__grid .image__card {
+    min-height: 26rem;
+  }
 }
 
 .third__grid .image__card .overlay {
@@ -550,8 +646,8 @@ nav button i {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(black));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(85%, black));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black 85%);
 }
 
 .third__grid .image__card .legend {
@@ -595,6 +691,18 @@ nav button i {
   font-family: "playfair display";
 }
 
+@media (min-width: 75em) {
+  .fourth {
+    padding: 4rem 4rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .fourth {
+    padding: 4rem 4rem 0;
+  }
+}
+
 .fourth .grid {
   padding: 0 2rem;
   display: -ms-grid;
@@ -613,13 +721,19 @@ nav button i {
   }
 }
 
-.fourth img {
-  min-height: 20rem;
+.fourth .grid .card img {
+  min-height: 10rem;
 }
 
 @media (min-width: 40em) {
-  .fourth img {
-    min-height: 10rem;
+  .fourth .grid .card img {
+    max-height: 20rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .fourth .grid .card img {
+    max-height: 24rem;
   }
 }
 
@@ -650,10 +764,22 @@ nav button i {
   padding: 0 4rem 4rem;
 }
 
+@media (min-width: 75em) {
+  .fifth__info {
+    padding: 0 20rem 4rem;
+  }
+}
+
 .fifth__info h3 {
   font-family: "playfair display";
   text-align: center;
   color: #000000;
+}
+
+@media (min-width: 75em) {
+  .fifth__info h3 {
+    line-height: 1.55;
+  }
 }
 
 .fifth__info p {
@@ -663,6 +789,13 @@ nav button i {
   font-weight: 500;
   font-style: italic;
   font-size: calc(1rem + 0.2vw);
+  color: rgba(0, 0, 0, 0.45);
+}
+
+@media (min-width: 75em) {
+  .fifth__info p {
+    font-size: 1.125rem;
+  }
 }
 
 .sixth {
@@ -676,6 +809,12 @@ nav button i {
 @media (min-width: 40em) {
   .sixth__info {
     padding: 0 2rem;
+  }
+}
+
+@media (min-width: 75em) {
+  .sixth__info {
+    padding: 0 8rem;
   }
 }
 
@@ -746,6 +885,12 @@ nav button i {
   }
 }
 
+@media (min-width: 75em) {
+  .seventh {
+    margin: 8rem 6rem;
+  }
+}
+
 .seventh h1 {
   margin-bottom: 4rem;
   text-align: center;
@@ -808,6 +953,12 @@ nav button i {
   padding: 1rem 4rem;
 }
 
+@media (min-width: 75em) {
+  .seventh__grid__card .info {
+    padding: 1rem 10rem;
+  }
+}
+
 .seventh__grid__card .info h2 {
   font-family: "playfair display";
   font-size: 1.2rem;
@@ -843,8 +994,24 @@ nav button i {
   }
 }
 
+@media (min-width: 75em) {
+  .eight .grid {
+    padding: 4.5rem 10vw 6rem;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .eight .grid form {
   width: 100%;
+}
+
+@media (min-width: 75em) {
+  .eight .grid form {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 .eight .grid form input,
@@ -919,8 +1086,24 @@ nav button i {
   text-align: center;
 }
 
+@media (min-width: 75em) {
+  .eight .grid .info {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+}
+
 .eight .grid .info h1 {
   font-family: "playfair display";
+}
+
+@media (min-width: 75em) {
+  .eight .grid .info h1 {
+    justify-items: center;
+  }
 }
 
 .eight .grid .info h5 {
@@ -975,8 +1158,10 @@ footer p {
   }
 }
 
-footer p span {
-  color: #8ea294;
+@media (min-width: 75em) {
+  footer p {
+    justify-items: center;
+  }
 }
 
 .mfp-fade.mfp-bg {

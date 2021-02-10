@@ -31,12 +31,18 @@
         <img src="./Assets/logo.png" alt="Logo" />
         <a class="d-none d-lg-block" href="#">Being the change we need to be</a>
       </div>
+      <div class="nav__items__desktop hide-for-mobile">
+        <a href="" class="nav__links">Home</a>
+        <a href="" class="nav__links">Gallery </a>
+        <a href="" class="nav__links">About</a>
+        <a href="" class="nav__links">Donate</a>
+      </div>
       <div class="hamburger hide-for-desktop">
         <div class="lines"></div>
         <div class="lines"></div>
         <div class="lines"></div>
       </div>
-      <div class="nav__items">
+      <div class="nav__items hide-for-desktop">
         <div class="nav__items__titles">
           <h3><a href="" class="nav__links">Home</a></h3>
           <h3><a href="" class="nav__links">Gallery </a></h3>
@@ -105,21 +111,21 @@
         <h5>Meaningful Work. Unforgettable Experiences.</h5>
       </div>
       <div class="third__grid">
-        <div class="image__card">
+        <div class="image__card one">
           <div class="overlay"></div>
           <div class="legend">
             <h3>HOMELESS OUTREACH</h3>
             <a href="">Get in Touch</a>
           </div>
         </div>
-        <div class="image__card">
+        <div class="image__card two">
           <div class="overlay"></div>
           <div class="legend">
             <h3>FOOD DONATION DROP-OFF</h3>
             <a href="">Get in Touch</a>
           </div>
         </div>
-        <div class="image__card">
+        <div class="image__card three">
           <div class="overlay"></div>
           <div class="legend">
             <h3>HEALTH CLINIC</h3>
@@ -169,7 +175,7 @@
       </div>
     </section>
     <section class="seventh">
-      <h1>GALLERY</h1>
+      <h1>VIDEOS</h1>
 
       <div class="seventh__grid">
         <div class="seventh__grid__card">
@@ -178,7 +184,7 @@
             <h2>Ascend The Hill - Aug 2018 - JHOP DC Internship / 01:00</h2>
             <a
               class="popup-youtube"
-              href="https://www.youtube.com/watch?v=ijL0h6-1qbQ"
+              href="https://www.youtube.com/watch?v=dRxH1EjVAIk&feature=emb_title"
               ><i class="far fa-play-circle"></i> Open YouTube video</a
             ><br />
           </div>
@@ -189,7 +195,7 @@
             <h2>Ascend The Hill - Aug 2018 - JHOP DC Internship / 01:00</h2>
             <a
               class="popup-youtube"
-              href="https://www.youtube.com/watch?v=ijL0h6-1qbQ"
+              href="https://www.youtube.com/watch?v=ZlwKRhnhC4c"
             >
               <i class="far fa-play-circle"></i> Open YouTube video</a
             ><br />
@@ -201,7 +207,7 @@
             <h2>Ascend The Hill - Aug 2018 - JHOP DC Internship / 01:00</h2>
             <a
               class="popup-youtube"
-              href="https://www.youtube.com/watch?v=ijL0h6-1qbQ"
+              href="https://www.youtube.com/watch?v=DNLpUTF9egk"
               ><i class="far fa-play-circle"></i> Open YouTube video</a
             ><br />
           </div>
@@ -212,7 +218,7 @@
             <h2>Ascend The Hill - Aug 2018 - JHOP DC Internship / 01:00</h2>
             <a
               class="popup-youtube"
-              href="https://www.youtube.com/watch?v=ijL0h6-1qbQ"
+              href="https://www.youtube.com/watch?v=xCalDoNz9Ts&feature=emb_title"
               ><i class="far fa-play-circle"></i> Open YouTube video</a
             ><br />
           </div>
@@ -268,7 +274,7 @@
           </div>
           <button type="submit" class="submit__btn">Submit</button>
         </form>
-        <hr />
+        <hr class="hide-for-desktop" />
         <div class="info">
           <h1>CONTACT JHOPWV</h1>
           <h5>West Virginia</h5>
@@ -316,7 +322,7 @@
           mainClass: "mfp-fade",
           removalDelay: 160,
           preloader: false,
-
+          enableEscapeKey: true,
           fixedContentPos: false
         });
       });

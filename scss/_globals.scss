@@ -34,13 +34,13 @@ a:focus {
 .hide-for-mobile {
   // hide for mobile and tablet
   @include breakpoint-down(medium) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hide-for-desktop {
   // hide for mobile and desktop
-  @include breakpoint-up(large) {
+  @include breakpoint-up(xLarge) {
     display: none;
   }
 }
