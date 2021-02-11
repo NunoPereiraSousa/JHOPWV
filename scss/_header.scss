@@ -26,13 +26,12 @@ nav {
 
       &:hover::before {
         opacity: 1;
-        bottom: -30%;
       }
 
       &::before {
         content: "";
         position: absolute;
-        bottom: -50%;
+        bottom: -30%;
         left: 0;
         height: 2px;
         width: 100%;

@@ -71,6 +71,12 @@
         font-weight: 400;
         font-family: "Montserrat";
         font-size: $regularSize;
+        transition: all 400ms ease;
+
+        &:hover {
+          background-color: $white;
+          color: $black;
+        }
       }
     }
 
@@ -220,26 +226,32 @@
       //   background-size: cover;
       // }
 
-      // .overlay {
-      //   position: absolute;
-      //   z-index: -1;
-      //   bottom: 0;
-      //   left: 0;
-      //   width: 100%;
-      //   height: 100%;
-      //   background: linear-gradient(
-      //     to bottom,
-      //     rgba(0, 0, 0, 0),
-      //     rgba(0, 0, 0, 1) 85%
-      //   );
-      // }
+      .overlay {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1)
+        );
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
 
       img {
         max-width: 100%;
+
+        @include breakpoint-up(xLarge) {
+          height: 18rem;
+        }
       }
 
       @include breakpoint-up(xLarge) {
-        min-height: 26rem;
+        min-height: auto;
       }
 
       .legend {
@@ -247,6 +259,28 @@
         // height: 100%;
         justify-content: flex-end;
         padding: 1.5rem 2.5rem 1.5rem 0;
+
+        h3 {
+          color: $white;
+          font-size: $smallSize;
+        }
+
+        a {
+          margin-top: 0.5rem;
+          font-size: $smallSize;
+          color: $green;
+        }
+      }
+
+      .legend__desktop {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        z-index: 2;
+        transform: translateX(-50%);
+        text-align: center;
+        opacity: 0;
+        transition: all 0.4s ease;
 
         h3 {
           color: $white;
@@ -291,22 +325,33 @@
       left: -8%;
       border: none;
 
-      @include breakpoint-down(small) {
+      @include breakpoint-down(medium) {
         display: none;
+      }
+    }
+
+    .flickity-button {
+      border: none;
+
+      svg {
+        transition: all 400ms ease;
+      }
+
+      &:hover svg {
+        fill: $green;
+      }
+
+      &:active svg {
+        fill: $green;
       }
     }
 
     .next {
       margin: 0 0 0 4vw;
-      right: -2.5%;
-      border: none;
+      right: -3.5%;
 
-      @include breakpoint-down(small) {
+      @include breakpoint-down(medium) {
         display: none;
-      }
-
-      svg {
-        fill: $white;
       }
     }
 
@@ -323,11 +368,24 @@
       width: 75vw;
       margin-right: 4vw;
 
+      @include breakpoint-up(medium) {
+        width: 60vw;
+      }
+
+      @include breakpoint-up(large) {
+        width: 30rem;
+        margin-right: 2vw;
+      }
+
       img {
         max-width: 100%;
 
         @include breakpoint-up(medium) {
-          max-height: 20rem;
+          max-height: 100%;
+        }
+
+        @include breakpoint-up(large) {
+          max-width: 100%;
         }
 
         @include breakpoint-up(xLarge) {
@@ -436,7 +494,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 1rem 2rem;
+      padding: 1rem 2rem 2rem;
       color: $white;
       font-family: "playfair display";
       text-align: center;
@@ -638,6 +696,10 @@
         margin: 2rem 0 0;
         display: flex;
         justify-content: center;
+
+        i {
+          cursor: pointer;
+        }
 
         .fa-twitter {
           margin: 0 1rem;

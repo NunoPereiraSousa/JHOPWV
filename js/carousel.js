@@ -5,7 +5,6 @@
 
 // Play with this value to change the speed
 // let tickerSpeed = 6;
-let isPaused;
 
 let flickity = null;
 const slideshowEl = document.querySelector(".js-slideshow");

@@ -132,13 +132,12 @@ nav .nav__items__desktop .nav__links {
 
 nav .nav__items__desktop .nav__links:hover::before {
   opacity: 1;
-  bottom: -30%;
 }
 
 nav .nav__items__desktop .nav__links::before {
   content: "";
   position: absolute;
-  bottom: -50%;
+  bottom: -30%;
   left: 0;
   height: 2px;
   width: 100%;
@@ -498,6 +497,13 @@ nav button i {
   font-weight: 400;
   font-family: "Montserrat";
   font-size: 1rem;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.landing__grid__content button:hover {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .landing__grid__image {
@@ -662,13 +668,33 @@ nav button i {
   position: relative;
 }
 
+.third__grid .image__card .overlay {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(black));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
 .third__grid .image__card img {
   max-width: 100%;
 }
 
 @media (min-width: 75em) {
+  .third__grid .image__card img {
+    height: 18rem;
+  }
+}
+
+@media (min-width: 75em) {
   .third__grid .image__card {
-    min-height: 26rem;
+    min-height: auto;
   }
 }
 
@@ -685,6 +711,30 @@ nav button i {
 }
 
 .third__grid .image__card .legend a {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  color: #8ea294;
+}
+
+.third__grid .image__card .legend__desktop {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.third__grid .image__card .legend__desktop h3 {
+  color: #ffffff;
+  font-size: 0.9375rem;
+}
+
+.third__grid .image__card .legend__desktop a {
   margin-top: 0.5rem;
   font-size: 0.9375rem;
   color: #8ea294;
@@ -725,26 +775,38 @@ nav button i {
   border: none;
 }
 
-@media (max-width: 39.9375em) {
+@media (max-width: 63.9375em) {
   .fourth .grid .previous {
     display: none;
   }
 }
 
-.fourth .grid .next {
-  margin: 0 0 0 4vw;
-  right: -2.5%;
+.fourth .grid .flickity-button {
   border: none;
 }
 
-@media (max-width: 39.9375em) {
+.fourth .grid .flickity-button svg {
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.fourth .grid .flickity-button:hover svg {
+  fill: #8ea294;
+}
+
+.fourth .grid .flickity-button:active svg {
+  fill: #8ea294;
+}
+
+.fourth .grid .next {
+  margin: 0 0 0 4vw;
+  right: -3.5%;
+}
+
+@media (max-width: 63.9375em) {
   .fourth .grid .next {
     display: none;
   }
-}
-
-.fourth .grid .next svg {
-  fill: #ffffff;
 }
 
 .fourth .grid .flickity-page-dots {
@@ -761,13 +823,32 @@ nav button i {
   margin-right: 4vw;
 }
 
+@media (min-width: 40em) {
+  .fourth .grid .card {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 64em) {
+  .fourth .grid .card {
+    width: 30rem;
+    margin-right: 2vw;
+  }
+}
+
 .fourth .grid .card img {
   max-width: 100%;
 }
 
 @media (min-width: 40em) {
   .fourth .grid .card img {
-    max-height: 20rem;
+    max-height: 100%;
+  }
+}
+
+@media (min-width: 64em) {
+  .fourth .grid .card img {
+    max-width: 100%;
   }
 }
 
@@ -893,7 +974,7 @@ nav button i {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 2rem;
   color: #ffffff;
   font-family: "playfair display";
   text-align: center;
@@ -1164,6 +1245,10 @@ nav button i {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.eight .grid .info .socials i {
+  cursor: pointer;
 }
 
 .eight .grid .info .socials .fa-twitter {
