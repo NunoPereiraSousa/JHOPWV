@@ -1,5 +1,38 @@
 .landing {
-  padding-top: 4rem;
+  // padding-top: 4rem;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  height: 100vh;
+  position: relative;
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .circle {
+      position: absolute;
+      z-index: -100;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $green;
+      width: 30vw;
+      height: 30vw;
+      border-radius: 50%;
+    }
+
+    .scrollable__text {
+      position: absolute;
+      z-index: -5;
+      left: 5%;
+      text-align: left;
+      font-size: $xLargeSizeLargeScreen;
+      white-space: nowrap;
+    }
+  }
 
   &__grid {
     height: 100%;
@@ -174,6 +207,7 @@
 
 .third {
   position: relative;
+  // z-index: 999;
   padding: 2rem 0 4rem;
   background-color: $black;
 
@@ -656,14 +690,22 @@
         order: 2;
       }
 
+      .form-control:active,
+      .form-control:focus {
+        outline: none !important;
+        box-shadow: none !important;
+        border-bottom: 1px solid $white;
+      }
+
       input,
       textarea {
         margin-top: 1.5rem;
         background-color: transparent;
         border: none;
-        border-bottom: 1px solid $white;
+        border-bottom: 1px solid $invisibleWhite;
         border-radius: 0;
         font-family: "Montserrat";
+        color: $white;
 
         @include breakpoint-up(medium) {
           margin-top: 2.5rem;
@@ -689,6 +731,12 @@
         font-size: $largeSize;
         font-weight: 500;
         font-family: "Montserrat";
+        transition: all 0.4s ease;
+
+        &:hover {
+          background-color: $green;
+          color: $white;
+        }
       }
     }
 

@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 let image__card = document.querySelectorAll(".image__card");
 let overlay = document.querySelectorAll(".overlay");
 let legend__desktop = document.querySelectorAll(".legend__desktop");
@@ -7,30 +9,41 @@ let three = document.querySelector(".three");
 
 let tl = gsap.timeline();
 
-gsap.to(".second", {
+tl.to(".scrollable__text", {
   scrollTrigger: {
-    trigger: ".second",
-    start: "top bottom",
-    end: "top top",
-    pin: ".landing",
-    pinSpacing: false,
-    markers: true
+    trigger: ".landing__info",
+    scrub: true,
+    start: "top top",
+    end: "+=200%",
+    pin: true,
+    pinSpacing: false
   },
-  y: "0%",
-  duration: 0.4
+
+  x: "-75%",
+  ease: "none"
 });
 
-// gsap.to([".fifth", ".sixth"], {
+ScrollTrigger.create({
+  trigger: ".second",
+  start: "top top",
+  end: "+=200%",
+  markers: true,
+  pin: false,
+  pinSpacing: false
+});
+
+// tl.to(".second", {
 //   scrollTrigger: {
-//     trigger: ".fifth",
-//     start: "150% bottom",
-//     end: "bottom bottom"
-//     // markers: true
+//     trigger: ".second",
+//     trigger: section,
+//       pin: true,
+//       pinSpacing: false,
 //   },
-//   delay: 1,
-//   backgroundColor: "#000000",
+//   y: "0%",
 //   duration: 0.4
 // });
+
+// -----------------------------------
 
 one.addEventListener("mouseenter", e => {
   gsap.to(overlay[0], {

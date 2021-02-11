@@ -409,7 +409,43 @@ nav button i {
 }
 
 .landing {
-  padding-top: 4rem;
+  height: 100vh;
+  position: relative;
+}
+
+.landing__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.landing__info .circle {
+  position: absolute;
+  z-index: -100;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #8ea294;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+}
+
+.landing__info .scrollable__text {
+  position: absolute;
+  z-index: -5;
+  left: 5%;
+  text-align: left;
+  font-size: 9.375rem;
+  white-space: nowrap;
 }
 
 .landing__grid {
@@ -1185,14 +1221,23 @@ nav button i {
   }
 }
 
+.eight .grid form .form-control:active,
+.eight .grid form .form-control:focus {
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border-bottom: 1px solid #ffffff;
+}
+
 .eight .grid form input,
 .eight .grid form textarea {
   margin-top: 1.5rem;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: 0;
   font-family: "Montserrat";
+  color: #ffffff;
 }
 
 @media (min-width: 40em) {
@@ -1243,6 +1288,13 @@ nav button i {
   font-size: 1.2rem;
   font-weight: 500;
   font-family: "Montserrat";
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.eight .grid form .submit__btn:hover {
+  background-color: #8ea294;
+  color: #ffffff;
 }
 
 .eight .grid hr {
