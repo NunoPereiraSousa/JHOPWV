@@ -7,43 +7,62 @@ let one = document.querySelector(".one");
 let two = document.querySelector(".two");
 let three = document.querySelector(".three");
 
-let tl = gsap.timeline();
+// let tl = gsap.timeline();
 
-tl.to(".scrollable__text", {
-  scrollTrigger: {
-    trigger: ".landing__info",
-    scrub: true,
-    start: "top top",
-    end: "+=200%",
-    pin: true,
-    pinSpacing: false
-  },
-
-  x: "-75%",
-  ease: "none"
-});
+let tl = gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".landing",
+      start: "center center",
+      pin: true,
+      // markers: true,
+      scrub: true
+    }
+  })
+  .to(".scrollable__text", {
+    x: "-75%",
+    ease: "none"
+  });
 
 ScrollTrigger.create({
-  trigger: ".second",
-  start: "top top",
-  end: "+=200%",
-  markers: true,
-  pin: false,
-  pinSpacing: false
+  trigger: ".landing",
+  start: "center center",
+  pin: ".landing",
+  pinSpacing: false,
+  markers: true
 });
 
-// tl.to(".second", {
+// ScrollTrigger.create({
+//   trigger: ".landing",
+//   start: "top top",
+//   pin: ".second",
+//   end: "bottom top",
+//   pinSpacing: false,
+//   markers: true
+// });
+
+// gsap.to(".second", {
 //   scrollTrigger: {
-//     trigger: ".second",
-//     trigger: section,
-//       pin: true,
-//       pinSpacing: false,
+//     trigger: ".landing",
+//     start: "bottom bottom",
+//     pin: false,
+//     pinSpacing: false
 //   },
 //   y: "0%",
 //   duration: 0.4
 // });
 
-// -----------------------------------
+// gsap.to([".fifth", ".sixth"], {
+//   scrollTrigger: {
+//     trigger: ".fifth",
+//     start: "150% bottom",
+//     end: "bottom bottom"
+//     // markers: true
+//   },
+//   delay: 1,
+//   backgroundColor: "#000000",
+//   duration: 0.4
+// });
 
 one.addEventListener("mouseenter", e => {
   gsap.to(overlay[0], {
