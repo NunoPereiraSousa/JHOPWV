@@ -6,6 +6,7 @@
 // Play with this value to change the speed
 // let tickerSpeed = 6;
 
+let isPaused = true;
 let flickity = null;
 const slideshowEl = document.querySelector(".js-slideshow");
 
@@ -39,7 +40,6 @@ flickity = new Flickity(slideshowEl, {
   selectedAttraction: 0.015,
   friction: 0.25
 });
-flickity.x = 0;
 
 //
 //   Add Event Listeners

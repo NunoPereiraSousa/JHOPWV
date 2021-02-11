@@ -449,6 +449,7 @@ nav button i {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
+    padding: 8vw 8vw;
   }
 }
 
@@ -521,6 +522,8 @@ nav button i {
 }
 
 .second {
+  position: relative;
+  height: 100vh;
   background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -583,7 +586,30 @@ nav button i {
   }
 }
 
+.second .circle {
+  position: absolute;
+  z-index: -100;
+  top: 0%;
+  left: -5%;
+  width: 25vw;
+  height: 25vw;
+  background-color: rgba(243, 240, 239, 0.4);
+  border-radius: 50%;
+}
+
+.second .circle2 {
+  position: absolute;
+  z-index: -100;
+  bottom: -15%;
+  right: 15%;
+  width: 15vw;
+  height: 15vw;
+  background-color: rgba(243, 240, 239, 0.4);
+  border-radius: 50%;
+}
+
 .third {
+  position: relative;
   padding: 2rem 0 4rem;
   background-color: #000000;
 }
@@ -596,7 +622,7 @@ nav button i {
 
 @media (min-width: 75em) {
   .third {
-    padding: 6rem 4rem;
+    padding: 6rem 10rem;
   }
 }
 
@@ -661,25 +687,28 @@ nav button i {
   .third__grid {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 2rem;
+            column-gap: 2rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .third__grid {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 4rem;
+            column-gap: 4rem;
+    padding: 1rem 2rem 3rem;
   }
 }
 
 .third__grid .image__card {
   position: relative;
-}
-
-.third__grid .image__card .overlay {
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(black));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
-  opacity: 0;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .third__grid .image__card img {
@@ -696,6 +725,17 @@ nav button i {
   .third__grid .image__card {
     min-height: auto;
   }
+}
+
+.third__grid .image__card .overlay {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #000000;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .third__grid .image__card .legend {
@@ -717,25 +757,35 @@ nav button i {
 }
 
 .third__grid .image__card .legend__desktop {
+  height: 26%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
-  bottom: 0%;
+  bottom: -15%;
   left: 50%;
   z-index: 2;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  text-align: center;
   opacity: 0;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .third__grid .image__card .legend__desktop h3 {
+  margin: 0;
   color: #ffffff;
+  text-transform: capitalize;
   font-size: 0.9375rem;
 }
 
 .third__grid .image__card .legend__desktop a {
-  margin-top: 0.5rem;
   font-size: 0.9375rem;
   color: #8ea294;
 }
@@ -754,12 +804,6 @@ nav button i {
 @media (min-width: 75em) {
   .fourth {
     padding: 4rem 4rem;
-  }
-}
-
-@media (min-width: 75em) {
-  .fourth {
-    padding: 4rem 4rem 0;
   }
 }
 
@@ -954,6 +998,12 @@ nav button i {
   background-size: cover;
   min-height: 34rem;
   position: relative;
+}
+
+@media (min-width: 75em) {
+  .sixth__image {
+    margin: 0 16rem;
+  }
 }
 
 .sixth__image .legend {
