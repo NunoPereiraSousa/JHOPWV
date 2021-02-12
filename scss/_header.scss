@@ -143,38 +143,14 @@ nav {
       }
     }
 
-    .about {
+    .desc {
       width: 100%;
       position: absolute;
       bottom: 0;
       left: 0;
       text-align: center;
-
-      &__quote {
-        padding: 1rem 2rem;
-        hr {
-          background-color: $green;
-          border: none;
-          width: 20vw;
-          height: 1px;
-          margin: 1rem auto;
-        }
-
-        p {
-          text-align: center;
-          font-size: $xSmallSize;
-          letter-spacing: 0.1em;
-          color: $black;
-          margin: 0;
-          font-family: "Montserrat";
-          font-style: italic;
-        }
-      }
-    }
-
-    .desc {
-      padding: 1rem 2rem;
       background-color: $green;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
