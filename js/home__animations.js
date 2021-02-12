@@ -7,92 +7,34 @@ let one = document.querySelector(".one");
 let two = document.querySelector(".two");
 let three = document.querySelector(".three");
 
-// let tl = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: ".landing",
-//     start: "top top",
-//     pin: true,
-//     // markers: true,
-//     scrub: true
-//   }
-// });
-// tl.to(".scrollable__text", {
-//   x: "-75%",
-//   ease: "none"
-// });
-
-// ScrollTrigger.create({
-//   trigger: ".second",
-//   start: "top top",
-//   end: "bottom bottom",
-//   pin: ".landing"
-// });
-
-const t1 = gsap.timeline({
+gsap.to(".second", {
   scrollTrigger: {
-    trigger: ".landing",
-    scrub: true,
-    start: "top top",
-    end: "bottom",
-    pin: true,
+    trigger: ".second",
+    start: "top bottom",
+    end: "top top",
+    pin: ".landing",
+    pinSpacing: false,
     markers: true
-  }
-});
-t1.to(".scrollable__text", {
-  x: "-75%",
-  ease: "none",
-  onComplete: () => {
-    ScrollTrigger.create({
-      trigger: ".second",
-      start: "top top",
-      end: "bottom bottom",
-      pin: ".second",
-      pinSpacing: false
-    });
-  }
+  },
+  duration: 0.4
 });
 
-// keep at top
+document.querySelector(".landing").addEventListener("mousemove", e => {
+  parallaxIt(e, ".landing__circle", 200);
+  parallaxIt(e, ".landing__circle2", -200);
+  parallaxIt(e, ".landing__circle3", 100);
+});
 
-// gsap.to(".second", {
-//   scrollTrigger: {
-//     trigger: ".second",
-//     start: "30% bottom"
-//   }
-// });
+function parallaxIt(e, target, movement) {
+  let $this = $(".landing");
+  let relX = e.pageX - $this.offset().left;
+  let relY = e.pageY - $this.offset().top;
 
-// gsap.to(".second", {
-//   scrollTrigger: {
-//     trigger: ".second",
-//     start: "30% bottom",
-//     end: "top top",
-//     pin: ".landing",
-//     pinSpacing: false
-//   },
-//   y: "0%",
-//   stagger: 0.2,
-//   duration: 0.4
-// });
-
-// ScrollTrigger.create({
-//   trigger: ".landing",
-//   start: "top top",
-//   pin: ".second",
-//   end: "bottom top",
-//   pinSpacing: false,
-//   markers: true
-// });
-
-// gsap.to(".second", {
-//   scrollTrigger: {
-//     trigger: ".landing",
-//     start: "bottom bottom",
-//     pin: false,
-//     pinSpacing: false
-//   },
-//   y: "0%",
-//   duration: 0.4
-// });
+  TweenMax.to(target, 1, {
+    x: ((relX - $this.width() / 2) / $this.width()) * movement,
+    y: ((relY - $this.height() / 2) / $this.height()) * movement
+  });
+}
 
 // gsap.to([".fifth", ".sixth"], {
 //   scrollTrigger: {

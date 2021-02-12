@@ -14,3 +14,67 @@
     width: $xLargeSize;
   }
 }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bubble-movement {
+  0%,
+  100% {
+    left: -5%;
+    bottom: 10%;
+  }
+
+  50% {
+    left: 15%;
+    bottom: 10%;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes bubble-movement2 {
+  0%,
+  100% {
+    right: -5%;
+    bottom: 30%;
+  }
+
+  50% {
+    right: 20%;
+    bottom: 20%;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes bubble-movement2-tablet {
+  0%,
+  100% {
+    right: -5%;
+    bottom: 5%;
+  }
+
+  50% {
+    right: 15%;
+    bottom: 10%;
+  }
+}
+
+@keyframes bubble-movement3 {
+  0%,
+  100% {
+    right: 25%;
+    top: 30%;
+  }
+
+  50% {
+    right: 40%;
+    top: 10%;
+    transform: scale(1.2);
+  }
+}
