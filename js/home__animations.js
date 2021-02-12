@@ -7,30 +7,72 @@ let one = document.querySelector(".one");
 let two = document.querySelector(".two");
 let three = document.querySelector(".three");
 
-// let tl = gsap.timeline();
+// let tl = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".landing",
+//     start: "top top",
+//     pin: true,
+//     // markers: true,
+//     scrub: true
+//   }
+// });
+// tl.to(".scrollable__text", {
+//   x: "-75%",
+//   ease: "none"
+// });
 
-let tl = gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".landing",
-      start: "center center",
-      pin: true,
-      // markers: true,
-      scrub: true
-    }
-  })
-  .to(".scrollable__text", {
-    x: "-75%",
-    ease: "none"
-  });
+// ScrollTrigger.create({
+//   trigger: ".second",
+//   start: "top top",
+//   end: "bottom bottom",
+//   pin: ".landing"
+// });
 
-ScrollTrigger.create({
-  trigger: ".landing",
-  start: "center center",
-  pin: ".landing",
-  pinSpacing: false,
-  markers: true
+const t1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".landing",
+    scrub: true,
+    start: "top top",
+    end: "bottom",
+    pin: true,
+    markers: true
+  }
 });
+t1.to(".scrollable__text", {
+  x: "-75%",
+  ease: "none",
+  onComplete: () => {
+    ScrollTrigger.create({
+      trigger: ".second",
+      start: "top top",
+      end: "bottom bottom",
+      pin: ".second",
+      pinSpacing: false
+    });
+  }
+});
+
+// keep at top
+
+// gsap.to(".second", {
+//   scrollTrigger: {
+//     trigger: ".second",
+//     start: "30% bottom"
+//   }
+// });
+
+// gsap.to(".second", {
+//   scrollTrigger: {
+//     trigger: ".second",
+//     start: "30% bottom",
+//     end: "top top",
+//     pin: ".landing",
+//     pinSpacing: false
+//   },
+//   y: "0%",
+//   stagger: 0.2,
+//   duration: 0.4
+// });
 
 // ScrollTrigger.create({
 //   trigger: ".landing",
