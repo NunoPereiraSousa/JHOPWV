@@ -605,6 +605,18 @@ nav button i {
   }
 }
 
+@media (min-width: 75em) {
+  .landing {
+    padding-top: 6rem;
+  }
+}
+
+@media (min-width: 120em) {
+  .landing {
+    padding-top: 2rem;
+  }
+}
+
 .landing__info {
   padding: 0 10vw 16vw;
   text-align: center;
@@ -634,7 +646,7 @@ nav button i {
 @media (min-width: 75em) {
   .landing__info {
     padding: 0;
-    font-size: 8rem;
+    font-size: 4rem;
   }
 }
 
@@ -659,9 +671,9 @@ nav button i {
   }
 }
 
-@media (min-width: 120em) {
+@media (min-width: 75em) {
   .landing hr {
-    margin: 0 auto 1rem;
+    margin: 2rem auto 1rem;
   }
 }
 
@@ -680,10 +692,10 @@ nav button i {
   }
 }
 
-@media (min-width: 120em) {
+@media (min-width: 75em) {
   .landing p {
     margin: 0 auto 0;
-    font-size: 1.875rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -741,7 +753,7 @@ nav button i {
 }
 
 .landing svg text {
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   fill: rgba(0, 0, 0, 0.1);
   font-family: Montserrat-Medium, Montserrat;
   font-weight: 500;
