@@ -13,8 +13,7 @@ gsap.to(".second", {
     start: "top bottom",
     end: "top top",
     pin: ".landing",
-    pinSpacing: false,
-    markers: true
+    pinSpacing: false
   },
   duration: 0.4
 });
@@ -35,18 +34,6 @@ function parallaxIt(e, target, movement) {
     y: ((relY - $this.height() / 2) / $this.height()) * movement
   });
 }
-
-// gsap.to([".fifth", ".sixth"], {
-//   scrollTrigger: {
-//     trigger: ".fifth",
-//     start: "150% bottom",
-//     end: "bottom bottom"
-//     // markers: true
-//   },
-//   delay: 1,
-//   backgroundColor: "#000000",
-//   duration: 0.4
-// });
 
 one.addEventListener("mouseenter", e => {
   gsap.to(overlay[0], {

@@ -1,19 +1,6 @@
-//
-//   Variables
-//
-//////////////////////////////////////////////////////////////////////
-
-// Play with this value to change the speed
-// let tickerSpeed = 6;
-
 let isPaused = true;
 let flickity = null;
 const slideshowEl = document.querySelector(".js-slideshow");
-
-//
-//   Functions
-//
-//////////////////////////////////////////////////////////////////////
 
 const update = () => {
   if (isPaused) return;
@@ -26,11 +13,6 @@ const update = () => {
   window.requestAnimationFrame(update);
 };
 
-//
-//   Create Flickity
-//
-//////////////////////////////////////////////////////////////////////
-
 flickity = new Flickity(slideshowEl, {
   autoPlay: false,
   prevNextButtons: true,
@@ -41,18 +23,8 @@ flickity = new Flickity(slideshowEl, {
   friction: 0.25
 });
 
-//
-//   Add Event Listeners
-//
-//////////////////////////////////////////////////////////////////////
-
 flickity.on("dragStart", () => {
   isPaused = true;
 });
-
-//
-//   Start Ticker
-//
-//////////////////////////////////////////////////////////////////////
 
 update();
