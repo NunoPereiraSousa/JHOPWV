@@ -1,9 +1,8 @@
 # JHOPWV
 
-Back in
-2000, JHOPWV, a Non-Profit Organization realized that by working together we
-could overcome our challenges much more efficiently, and that is why
-we ultimately decided to launch JHOPWV.
+Back in 2000, a Non-Profit Organization realized that by working together they
+could overcome their challenges much more efficiently, and that is why
+they ultimately decided to launch JHOPWV.
 
-JHOPWV knows that our strength lies not only in the words we stand by,
-but most importantly through the actions of our initiatives. 
+JHOPWV knows that their strength lies not only in the words they stand by,
+but most importantly through the actions of their initiatives. 
