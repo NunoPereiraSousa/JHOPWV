@@ -19,9 +19,9 @@ gsap.to(".second", {
 });
 
 document.querySelector(".landing").addEventListener("mousemove", e => {
-  parallaxIt(e, ".landing__circle", 200);
-  parallaxIt(e, ".landing__circle2", -200);
-  parallaxIt(e, ".landing__circle3", 100);
+  parallaxIt(e, ".landing__content__circle", 200);
+  parallaxIt(e, ".landing__content__circle2", -200);
+  parallaxIt(e, ".landing__content__circle3", 100);
 });
 
 function parallaxIt(e, target, movement) {
